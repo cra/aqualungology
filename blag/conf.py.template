@@ -1,0 +1,20 @@
+# encoding: utf-8
+
+DEBUG = True
+
+ADMINS = (
+    # ('Your Name', 'your_email@example.com'),
+)
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2'
+        'NAME': 'cramurme_blag',
+        'USER': 'cramurme_blag',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
+    }
+}
+
+SECRET_KEY = 'random string of 50 symbols'

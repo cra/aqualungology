@@ -1,0 +1,15 @@
+MySQL-python==1.2.3
+distribute==0.6.14
+iotop==0.4.3
+ipython==0.10.1
+lxml==2.3
+mercurial==1.8.2
+numpy==1.6.0
+psycopg2==2.4-beta2
+python-bz2==1.1
+python-openid==2.2.5
+readline==6.1.0
+virtualenv==1.5.1
+virtualenvwrapper==2.6.1
+wsgiref==0.1.2
+xapian-haystack==1.1.5beta
