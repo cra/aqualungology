@@ -6,7 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^$', 'django.contrib.auth.views.login', name='log-in'), #blag.views.home', name='home'),
+    url(r'^$', 'content.views.index', name='index'),
     # url(r'^blag/', include('blag.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
