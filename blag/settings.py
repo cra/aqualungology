@@ -3,7 +3,7 @@ import os
 import conf
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 
-DEBUG = conf.True
+DEBUG = conf.DEBUG
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = conf.ADMINS

@@ -1,2 +1,6 @@
+bin
+lib
+include
 conf.py
 *.pyc
+*.pyo
