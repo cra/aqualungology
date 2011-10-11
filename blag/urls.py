@@ -4,8 +4,9 @@ from django.conf.urls.defaults import patterns, include, url
 #from django.contrib import admin
 #admin.autodiscover()
 
-urlpatterns = patterns('',
-    url(r'^$', 'content.views.index', name='index'),
+urlpatterns = patterns(
+    '',
+    url("", include("content.urls")),
     # url(r'^blag/', include('blag.foo.urls')),
 
     #url(r'^admin/', include(admin.site.urls)),

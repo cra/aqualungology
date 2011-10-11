@@ -1,7 +1,11 @@
 # Django settings for blag project.
 import os
+import sys
 import conf
+
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+
+sys.path.append(PROJECT_DIR)
 
 DEBUG = conf.DEBUG
 TEMPLATE_DEBUG = DEBUG
