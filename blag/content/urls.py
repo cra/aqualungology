@@ -5,4 +5,8 @@ import views
 
 urlpatterns = (
     url(r'^$', 'content.views.index', name='index'),
+    url(r'^films/put/$',
+        'content.views.upload',
+        {'media_type': "film"},
+        name='create-media'),
 )
