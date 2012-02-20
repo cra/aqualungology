@@ -25,3 +25,11 @@ def articles(request):
     return {'articles': Article.objects.all(), 'body_class': 'blog'}
 
 
+@render_to('about.html')
+def about(request):
+    return {'body_class': 'index'}
+
+
+@render_to('contact.html')
+def contacts(request):
+    return {'body_class': 'contacts'}

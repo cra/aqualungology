@@ -2,7 +2,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   <title>cramur.me &mdash; {% block title %}Главная страница{% endblock %}</title>
-  <link rel="stylesheet" type="text/css" href="/stl.css">
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/stl.css">
   {% block extra_head_after_css %}{% endblock %}
   {% block extra_head_before_js %}{% endblock %}
 {% block base_js %}
@@ -14,10 +14,12 @@
     <div id="header">
     {% block header %}
     <ul id="navigation">
-        {#<li><a href="/" class="logo">В начало</a></li>#}
-        <li id="#nav-blog"><a href="#">Блог</a></li>
-        <li id="#nav-about"><a href="#">Обо мне</a></li>
-        <li id="#nav-contact"><a href="#">Контакты</a></li>
+        <!--<li><a href="/" class="logo">В начало</a></li>-->
+        {#<li id="#nav-blog"><a href="{% url articles %}">Блог</a></li>#}
+        {#<li id="#nav-about"><a href="{% url about %}">Обо мне</a></li>#}
+        {#<li id="#nav-contact"><a href="{% url contacts %}">Контакты</a></li>#}
+        {% block additional_navigation %}
+        {% endblock additional_navigation %}
     </ul>
     {% endblock header %}
     </div>
