@@ -49,7 +49,7 @@
 #post #entry-text {
     float: left;
     clear: left;
-    width: 476px;
+    width: 546px;
     padding: 0 180px;
 }
 
@@ -184,7 +184,7 @@
     font-size: 1.125em;
     line-height: 1.25em;
     font-weight: bold;
-    width: 148px;
+    width: 178px;
     white-space: normal;
     color: rgb(109, 116, 109);
 }

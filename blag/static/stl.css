@@ -121,7 +121,7 @@ a:hover {
 .posts-table td {
     padding: 1em 16px 1em 0;
     font-size: 0.75em;
-    vertical-align: bottom;
+    vertical-align: center;
     width: 148px;
     /*background: url(../images/mask-black-25.png) 0 100% repeat-x;*/
 }
@@ -140,7 +140,7 @@ a:hover {
 }
 
 .posts-table td.title {
-    width: 328px;
+    width: 528px;
     padding-right: 0;
 }
 

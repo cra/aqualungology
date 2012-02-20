@@ -9,7 +9,8 @@ from content.forms import AddFilmForm
 
 @render_to('index.html')
 def index(request):
-    return {'articles': Article.objects.all().order_by('-date_published'), 'body_class': 'index'}
+    return {'articles': Article.objects.all().order_by('-date_published'),
+            'body_class': 'blog'}
 
 
 @render_to('upload.html')
