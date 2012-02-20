@@ -248,10 +248,10 @@ a:hover {
 }
 
 #header #globalnav a:hover,
-.blog #header #globalnav #gn-blog a,
+.blog #header #globalnav #nav-blog a,
 .work #header #globalnav #gn-work a,
-.about #header #globalnav #gn-about a,
-.contact #header #globalnav #gn-contact a {
+.about #header #globalnav #nav-about a,
+.contact #header #globalnav #nav-contact a {
 	color: rgb(255, 255, 255);
 }
 
