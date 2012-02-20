@@ -14,4 +14,10 @@
       - 2001)</i></dd>
   </dl>
 </blockquote>
+
+<div id="article-list">
+{% for entry in articles %}
+    <p>{{ entry.title }}</p>
+{% endfor %}
+</div>
 {% endblock content %}

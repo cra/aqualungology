@@ -9,7 +9,7 @@ from content.forms import AddFilmForm
 
 @render_to('index.html')
 def index(request):
-    return {}
+    return {'articles': Article.objects.all()}
 
 
 @render_to('upload.html')
