@@ -3,5 +3,6 @@
 {% block content %}
 {% for entry in articles %}
     {{ entry }}
+    <br>{{ entry.get_absolute.url }}
 {% endfor %}
 {% endblock content %}

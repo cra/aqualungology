@@ -13,6 +13,13 @@ class Article(models.Model):
     def __unicode__(self):
         return self.slug
 
+    def get_absolute_url(self):
+        return ('blag-article-detail', (), { 'year': self.date_published.strftime('%Y'),
+                                             'month': self.date_published.strftime('%b').lower(),
+                                             'day': self.date_publishe.strftime('%d'),
+                                             'slug': self.slug })
+    get_absolute_url = models.permalink(get_absolute_url)
+
 
 class MediaEntry(models.Model):
     name = models.CharField(u'Название', max_length=200)
