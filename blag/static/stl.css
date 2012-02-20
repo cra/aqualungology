@@ -96,3 +96,17 @@ blockquote.quotebig {
     display: block;
 }
 
+/* LINKS */
+
+a { 
+    text-decoration: none; 
+    outline: none; 
+    font-weight: bold;
+    color: rgb(30, 40, 30);
+    color: rgba(30, 40, 30, .9);
+    *color: rgb(30, 40, 30);
+}
+
+a:hover { 
+   color: rgba(30, 40, 30, .65);
+}
