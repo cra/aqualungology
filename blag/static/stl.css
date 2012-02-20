@@ -152,6 +152,56 @@ a:hover {
     display: block;
 }
 
+
+/* LAYOUT */
+
+#main,
+#secondary {
+	overflow: hidden;
+	position: relative;
+}
+
+#header,
+#footer,
+#content,
+#content-main,
+#content-secondary {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+	position: relative;
+}
+
+#content-main {
+    margin-bottom: 3em;
+}
+
+/* MAIN/SECONDARY SECTIONS */
+
+#main { 
+	background-color: rgb(255, 255, 255);
+	color: rgb(53, 62, 52);
+}
+
+#secondary {
+	/*background: url(../images/mask-white-25.png);*/
+}
+
+#main .section h1,
+#main .section h2,
+#main .section h3 { 
+	color: rgb(53, 62, 52);
+}
+
+#main a {
+	color: rgb(0, 133, 189)
+}
+
+#main a:hover {
+	color: rgb(90, 176, 212)
+}
+
 /* HEADER */
 
 #header {
