@@ -32,7 +32,7 @@ MEDIA_ROOT = '/home/cramurme/public_html/media'
 
 MEDIA_URL = '/media/'
 
-STATIC_ROOT = '/home/cramurme/public_html'
+STATIC_ROOT = '/home/cramurme/public_html/static'
 
 STATIC_URL = '/static/'
 
