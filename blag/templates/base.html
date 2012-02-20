@@ -2,29 +2,38 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   <title>cramur.me &mdash; {% block title %}Главная страница{% endblock %}</title>
-  <link rel="stylesheet" type="text/css" href="/stl.css">
+  <link rel="stylesheet" type="text/css" href="{% STATIC_URL %}/stl.css">
   {% block extra_head_after_css %}{% endblock %}
   {% block extra_head_before_js %}{% endblock %}
 {% block base_js %}
 {% endblock base_js %}
 {% block extra_head_after_js %}{% endblock %}
 </head>
-<body bgcolor="#8CCEF7">
-{% block message %}
-{% if messages %}
-{% for message in messages %}
-<p class="{{ message.tags }}">{{ message }} {% now "d.m.Y H:i:s" %}</p>
-{% endfor %}
-{% endif %}
-{% endblock message %}
+<body>
+    <div id="header">
+    {% block header %}
+    {% endblock header %}
+    </div>
+    <div id="messages">
+    {% block message %}
+        {% if messages %}
+            {% for message in messages %}
+            <p class="{{ message.tags }}">{{ message }} {% now "d.m.Y H:i:s" %}</p>
+            {% endfor %}
+        {% endif %}
+    {% endblock message %}
+    </div>
 
-{% block content %}
-{% block main %}
-<h1>Стартовая страница</h1>
-{% endblock main %}
-{% endblock content %}
-<div id="footer">
-    {% block footer %}
-    {% endblock footer %}
-</div>
-</body></html>
+    <div id="content">
+        {% block content %}
+        {% block main %}
+        <h1>Стартовая страница</h1>
+        {% endblock main %}
+        {% endblock content %}
+    </div>
+    <div id="footer">
+        {% block footer %}
+        {% endblock footer %}
+    </div>
+</body> 
+</html>

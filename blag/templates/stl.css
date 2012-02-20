@@ -1,3 +1,16 @@
+# 6 basic colors:
+# bg: #BABABA
+# bg2: #454545 (too dark? use as fg?)
+# headers: #224535
+# color1: #479170
+# color2: #264522
+# color3: #509147
+
+
+div.header {
+	background-color: #FF00FF;
+}
+
 blockquote.quotebig {
 	border: solid 1px black;
 	background-color: #FFFFFF;
