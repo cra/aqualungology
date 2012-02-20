@@ -23,6 +23,9 @@ urlpatterns = (
         name='articles'),
     url(r'^(?P<year>\d{4})/(?P<month>\w{3})/(?P<day>\d{2})/(?P<slug>[-\w]+)/$',
         date_based.object_detail,
-        dict(articles_info, slug_field='slug', template_name='article_details.html'),
+        dict(articles_info,
+            slug_field='slug',
+            template_name='article_details.html',
+            allow_future=True,),
         name='blag-article-detail'),
 )
