@@ -28,15 +28,15 @@ SITE_ID = 1
 USE_I18N = False
 USE_L10N = True
 
-MEDIA_ROOT = '/home/cramurme/public_html/blag_static'
+MEDIA_ROOT = '/home/cramurme/public_html/media'
 
 MEDIA_URL = '/media/'
 
-STATIC_ROOT = ''
+STATIC_ROOT = '/home/cramurme/public_html'
 
 STATIC_URL = '/static/'
 
-ADMIN_MEDIA_PREFIX = '/static/admin/'
+ADMIN_MEDIA_PREFIX = '/admin/'
 
 STATICFILES_DIRS = (
     os.path.join(PROJECT_DIR, 'static'),
