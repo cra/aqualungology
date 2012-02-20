@@ -16,6 +16,10 @@
 {#</blockquote>#}
 {#{% endblock header %}#}
 
+{% block extra_head_after_css %}
+  <link rel="stylesheet" type="text/css" href="/entries.css">
+{% endblock extra_head_after_css %}
+
 {% block content %}
 
 <div id="articles" class="section">

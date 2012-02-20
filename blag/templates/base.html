@@ -6,10 +6,11 @@
   {% block extra_head_after_css %}{% endblock %}
   {% block extra_head_before_js %}{% endblock %}
 {% block base_js %}
+<script src="/jquery-1.7.1.min.js" type="text/javascript" charset="utf-8"></script>
 {% endblock base_js %}
 {% block extra_head_after_js %}{% endblock %}
 </head>
-<body>
+<body class="{{ body_class }}">
     <div id="header">
     {% block header %}
     <ul id="navigation">

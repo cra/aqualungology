@@ -9,7 +9,7 @@ from content.forms import AddFilmForm
 
 @render_to('index.html')
 def index(request):
-    return {'articles': Article.objects.all()}
+    return {'articles': Article.objects.all(), 'body_class': 'index'}
 
 
 @render_to('upload.html')
@@ -22,12 +22,6 @@ def upload(request, media_type):
 
 @render_to('articles.html')
 def articles(request):
-    return {'articles': Article.objects.all()}
+    return {'articles': Article.objects.all(), 'body_class': 'blog'}
 
-
-@render_to('articles.html')
-def blag_article_details(request, year, month, day, slug):
-    #if 'films' in media_type:
-    print year, month, day, slug
-    return {}
 
