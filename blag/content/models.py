@@ -3,6 +3,17 @@
 from django.db import models
 
 
+class Article(models.Model):
+    slug = models.SlugField(max_length=200, unique_for_date='date_published')
+    title = models.CharField(u'титле', max_length=250)
+    content = models.TextField(blank=True)
+    date_published = models.DateTimeField(blank=True, null=True, db_index=True)
+    # TODO save rendered content in model to speed up loading
+
+    def __unicode__(self):
+        return self.slug
+
+
 class MediaEntry(models.Model):
     name = models.CharField(u'Название', max_length=200)
     reason = models.TextField(u'Причина добавления', max_length=400, default='')
@@ -29,6 +40,6 @@ class Film(MediaEntry):
         ('C', 'Comedy'),
     )
 
-    length = models.CharField(u'Длительность в минутах', max_length=20) 
+    length = models.CharField(u'Длительность в минутах', max_length=20)
     genre = models.CharField(u'Жанр', max_length=1, choices=FILM_GENRES, blank=True)
     company = models.CharField(u'Компания для просмотра', max_length=100, blank=True)
