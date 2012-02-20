@@ -1,7 +1,7 @@
 #!/bin/bash
 
 git pull
-./manage.py collectstatic --noinput
+~/env/blag/manage.py collectstatic --noinput
 cd
 ~/uwsgi.sh restart
 cd -
