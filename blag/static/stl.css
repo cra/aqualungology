@@ -56,3 +56,43 @@ blockquote.quotebig {
     width: 164px;
 }
 
+/* POSTS TABLE */
+
+.posts-table {
+    /*background: url(../images/mask-black-25.png) repeat-x;*/
+}
+
+.posts-table td {
+    padding: 1em 16px 1em 0;
+    font-size: 0.75em;
+    vertical-align: bottom;
+    width: 148px;
+    /*background: url(../images/mask-black-25.png) 0 100% repeat-x;*/
+}
+
+.posts-table td.date p,
+.posts-table td.summary p {
+    color: rgb(109, 116, 109);
+}
+
+.posts-table td.summary {
+    width: 312px;
+}
+
+.posts-table td.date {
+    width: 164px;
+}
+
+.posts-table td.title {
+    width: 328px;
+    padding-right: 0;
+}
+
+.posts-table td.title a {
+    font-size: 3em;
+    line-height: 1em;
+    letter-spacing: -0.05em;
+    padding-right: 16px;
+    display: block;
+}
+
