@@ -29,7 +29,7 @@
     <tr>
         <td class="date"><p>{{ entry.date_published|date:"Y/m/d"|lower }}</p></td>
         <td class="title"><a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a></td>
-        <td class="summary"><p>{{ entry.summary }}</p></td>
+        <td class="summary"><p>{{ entry.summary|safe }}</p></td>
     </tr>
 {% endfor %}
     </table>
