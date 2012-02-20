@@ -2,19 +2,19 @@
 {% block title %}cramur.me{% endblock %}
 {% block content_title %}cramur.me{% endblock %}
 
-{% block header %}
-<blockquote class="quotebig">
-  <dl>
-    <dt>There is a theory which states that if ever anybody discovers exactly
-    what the Universe is for and why it is here, it will instantly disappear
-    and be replaced by something even more bizarre and inexplicable. There is
-    another theory which states that this has already happened.</dt>
-    <dd class="author">
-    <b><a href="http://en.wikipedia.org/wiki/Douglas_Adams">Douglas Adams</a></b><br><i>English humorist & science fiction novelist  (1952
-      - 2001)</i></dd>
-  </dl>
-</blockquote>
-{% endblock header %}
+{#{% block header %}#}
+{#<blockquote class="quotebig">#}
+  {#<dl>#}
+    {#<dt>There is a theory which states that if ever anybody discovers exactly#}
+    {#what the Universe is for and why it is here, it will instantly disappear#}
+    {#and be replaced by something even more bizarre and inexplicable. There is#}
+    {#another theory which states that this has already happened.</dt>#}
+    {#<dd class="author">#}
+    {#<b><a href="http://en.wikipedia.org/wiki/Douglas_Adams">Douglas Adams</a></b><br><i>English humorist & science fiction novelist  (1952#}
+      {#- 2001)</i></dd>#}
+  {#</dl>#}
+{#</blockquote>#}
+{#{% endblock header %}#}
 
 {% block content %}
 
@@ -23,7 +23,7 @@
     <table class="posts-table">
 {% for entry in articles %}
     <tr>
-        <td class="date"><p>{{ entry.date_published }}</p></td>
+        <td class="date"><p>{{ entry.date_published|date:"Y/m/d"|lower }}</p></td>
         <td class="title"><a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a></td>
         <td class="summary">{{ entry.summary }}</td>
     </tr>
