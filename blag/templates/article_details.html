@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>{{ object.title }}</h2>
-{{ object.content|safe }}
+<div id="post" class="section">
+<div id="entry-header">
+    <p class="date">{{ object.published_date }}</p>
+    <h1>{{ object.title }}</h1>
+</div>
+<div id="entry-text">
+    <div class="inline flushleft pullquote summary first">{{ object.summary|safe }}</div>
+    {{ object.content|safe }}
+</div>
 {% endblock content %}

@@ -7,6 +7,7 @@ class Article(models.Model):
     slug = models.SlugField(max_length=200, unique_for_date='date_published')
     title = models.CharField(u'титле', max_length=250)
     content = models.TextField(blank=True)
+    summary = models.TextField(blank=True)
     date_published = models.DateTimeField(blank=True, null=True, db_index=True)
     # TODO save rendered content in model to speed up loading
 

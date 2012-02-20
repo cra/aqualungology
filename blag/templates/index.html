@@ -21,8 +21,8 @@
 {% for entry in articles %}
     <tr>
         <td class="date"><p>{{ entry.date_published }}</p></td>
-        <td class="title"><a href="{{ entry.get_absolute_url }}">{{ entry.title }}</p></td>
-        <td class="summary">Placeholder for summary</td>
+        <td class="title"><a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a></td>
+        <td class="summary">{{ entry.summary }}</td>
     </tr>
 {% endfor %}
     </table>
