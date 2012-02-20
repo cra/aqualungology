@@ -10,6 +10,7 @@ import views
 articles_info = {
     'queryset': Article.objects.all(),
     'date_field': 'date_published',
+    'extra_context': {"body_class": "blog"}
 }
 
 urlpatterns = (
