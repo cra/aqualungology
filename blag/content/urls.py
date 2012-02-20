@@ -21,7 +21,7 @@ urlpatterns = (
     url(r'^articles/$',
         'content.views.articles',
         name='articles'),
-    url(r'^(?P<year>\d{4})/(?P<month>\w{3})/(?P<day>\d{2})/(?P<slug>[-\w]+)/$',
+    url(r'^articles/(?P<year>\d{4})/(?P<month>\w{3})/(?P<day>\d{2})/(?P<slug>[-\w]+)/$',
         date_based.object_detail,
         dict(articles_info,
             slug_field='slug',
