@@ -225,17 +225,17 @@ a:hover {
 	opacity: .65;
 }
 
-#header #globalnav {
+#header #navigation {
 	position: absolute;
 	left: 164px;
 	bottom: 0;
 }
 
-#header #globalnav li { 
+#header #navigation li { 
 	display: inline;
 }
 
-#header #globalnav a { 
+#header #navigation a { 
 	float: left;
 	width: 148px;
 	padding-top: 2em;
@@ -247,11 +247,11 @@ a:hover {
 	*color: rgb(255, 255, 255);
 }
 
-#header #globalnav a:hover,
-.blog #header #globalnav #nav-blog a,
-.work #header #globalnav #gn-work a,
-.about #header #globalnav #nav-about a,
-.contact #header #globalnav #nav-contact a {
+#header #navigation a:hover,
+.blog #header #navigation #nav-blog a,
+.work #header #navigation #gn-work a,
+.about #header #navigation #nav-about a,
+.contact #header #navigation #nav-contact a {
 	color: rgb(255, 255, 255);
 }
 
