@@ -256,6 +256,31 @@ a:hover {
 	color: rgb(255, 255, 255);
 }
 
+/* FOOTER */
+/* FOOTER */
+
+#footer {
+    clear: both;
+    margin-top: 1em;
+    padding-bottom: 6em;
+    -webkit-text-size-adjust: none;
+    zoom: 1;
+}
+
+#footer p {
+    font-size: 0.75em;
+}
+
+#footer .logo {
+    float: left;
+    width: 180px;
+}
+
+#footer .logo:hover {
+    opacity: .65;
+}
+
+
 /* OTHER STUFF */
 div.header {
 	background-color: #FF00FF;

@@ -8,6 +8,7 @@ class Article(models.Model):
     title = models.CharField(u'титле', max_length=250)
     content = models.TextField(blank=True)
     summary = models.TextField(blank=True)
+    is_draft = models.BooleanField(default=True)
     date_published = models.DateTimeField(blank=True, null=True, db_index=True)
     # TODO save rendered content in model to speed up loading
 

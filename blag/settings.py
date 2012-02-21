@@ -82,6 +82,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'content',
+    'south',
 )
 
 #LOGGING = {
