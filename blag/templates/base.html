@@ -9,6 +9,9 @@
 <script src="/jquery-1.7.1.min.js" type="text/javascript" charset="utf-8"></script>
 {% endblock base_js %}
 {% block extra_head_after_js %}{% endblock %}
+{% block google_analytics %}
+    {% include _tracking.html %}
+{% endblock google_analytics %}
 </head>
 <body class="{{ body_class }}">
     <div id="header">
@@ -16,8 +19,10 @@
     <ul id="navigation">
         <!--<li><a href="/" class="logo">В начало</a></li>-->
         {#<li id="#nav-blog"><a href="{% url articles %}">Блог</a></li>#}
-        {#<li id="#nav-about"><a href="{% url about %}">Обо мне</a></li>#}
-        {#<li id="#nav-contact"><a href="{% url contacts %}">Контакты</a></li>#}
+        <li id="#nav-blog"><a href="{% url index %}">Блог</a></li>
+        {#<li id="#nav-about"><a href="{% url about %}">Кто я</a></li>#}
+        <li id="#nav-about"><a href="{% url about %}">Кто я</a></li>
+        <li id="#nav-projects"><a href="{% url projects %}">Что я</a></li>
         {% block additional_navigation %}
         {% endblock additional_navigation %}
     </ul>
