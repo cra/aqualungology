@@ -9,9 +9,6 @@
 <script src="/jquery-1.7.1.min.js" type="text/javascript" charset="utf-8"></script>
 {% endblock base_js %}
 {% block extra_head_after_js %}{% endblock %}
-{% block google_analytics %}
-    {% include '_tracking.html' %}
-{% endblock google_analytics %}
 </head>
 <body class="{{ body_class }}">
     <div id="header">
@@ -50,5 +47,8 @@
         <!--<p><span class="quiet">Игорь Мосягин. Содержимое рекомендуется распространять по лицензии WTFPL.</span></p>-->
         {% endblock footer %}
     </div>
+{% block google_analytics %}
+    {% include '_tracking.html' %}
+{% endblock google_analytics %}
 </body> 
 </html>
