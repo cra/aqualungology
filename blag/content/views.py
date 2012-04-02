@@ -34,3 +34,8 @@ def about(request):
 @render_to('contact.html')
 def contacts(request):
     return {'body_class': 'contacts'}
+
+
+@render_to('contact.html')
+def projects(request):
+    return {'body_class': 'contacts'}

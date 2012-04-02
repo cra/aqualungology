@@ -3,6 +3,7 @@ from django.conf.urls.defaults import patterns, include, url
 from django.views.generic import date_based
 
 from content.models import Article
+from content.feeds import LatestEntriesFeed
 
 import views
 
@@ -19,6 +20,7 @@ urlpatterns = (
         'content.views.upload',
         {'media_type': "film"},
         name='create-media'),
+    url(r'^feed/$', LatestEntriesFeed(), name='feed'),
     url(r'^articles/$',
         'content.views.articles',
         name='articles'),
@@ -28,6 +30,9 @@ urlpatterns = (
     url(r'^contacts/$',
         'content.views.contacts',
         name='contacts'),
+    url(r'^contacts/$',
+        'content.views.projects',
+        name='projects'),
     url(r'^articles/(?P<year>\d{4})/(?P<month>\w{3})/(?P<day>\d{2})/(?P<slug>[-\w]+)/$',
         date_based.object_detail,
         dict(articles_info,

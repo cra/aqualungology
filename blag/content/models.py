@@ -2,7 +2,6 @@
 
 from django.db import models
 
-
 class Article(models.Model):
     slug = models.SlugField(max_length=200, unique_for_date='date_published')
     title = models.CharField(u'титле', max_length=250)
@@ -52,3 +51,4 @@ class Film(MediaEntry):
     length = models.CharField(u'Длительность в минутах', max_length=20)
     genre = models.CharField(u'Жанр', max_length=1, choices=FILM_GENRES, blank=True)
     company = models.CharField(u'Компания для просмотра', max_length=100, blank=True)
+
