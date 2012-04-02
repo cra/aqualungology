@@ -3,6 +3,7 @@
 DEBUG = True
 
 ADMINS = (
+    ('__ADMIN_NAME__', '__ADMIN_EMAIL__'),
     # ('Your Name', 'your_email@example.com'),
 )
 
@@ -18,3 +19,8 @@ DATABASES = {
 }
 
 SECRET_KEY = 'random string of 50 symbols'
+EMAIL_HOST = '__MAILHOST__'
+EMAIL_HOST_USER = u'__MAILUSER__'
+EMAIL_HOST_PASSWORD = r'__MAILPASS__'
+EMAIL_USE_TLS = True
+EMAIL_PORT = __MAILPORT__

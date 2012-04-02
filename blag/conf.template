@@ -1,1 +1,7 @@
 's|__TRACKING_ACC__|BLABLABLA|'
+'s|__MAILHOST__|example.com|'
+'s|__MAILUSER__|example.user|'
+'s|__MAILPORT__|100500|'
+'s|__MAILPASS__|example.pass|'
+'s|__ADMIN_NAME__|example_admin|'
+'s|__ADMIN_EMAIL__|example_admin_email|'

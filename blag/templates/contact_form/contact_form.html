@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="{% url contact_form %}" method="post">
+<table>
+{{ form }}
+</table>
+<input type="submit" value="Get in touch"/>
+</form>
+{% endblock content %}
