@@ -7,6 +7,7 @@ admin.autodiscover()
 
 urlpatterns = patterns(
     '',
+    url(r'^contact/', include("contact_form.urls")),
     url("", include("content.urls")),
     # url(r'^blag/', include('blag.foo.urls')),
 

@@ -86,6 +86,12 @@ INSTALLED_APPS = (
     'south',
 )
 
+EMAIL_HOST = conf.EMAIL_HOST
+EMAIL_HOST_USER = conf.EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = conf.EMAIL_HOST_PASSWORD
+EMAIL_USE_TLS = conf.EMAIL_USE_TLS
+EMAIL_PORT = conf.EMAIL_PORT
+
 #LOGGING = {
 #    'version': 1,
 #    'disable_existing_loggers': False,
