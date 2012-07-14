@@ -191,12 +191,19 @@ a:hover {
 }
 
 #header,
-#footer,
+#footer {
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+	position: relative;
+    background-color: black;
+}
+
 #content,
 #content-main,
 #content-secondary {
-	width: 1000px;
-	margin-left: auto;
+    width: 1000px;
+	margin-left: 3em;
 	margin-right: auto;
 	overflow: hidden;
 	position: relative;
