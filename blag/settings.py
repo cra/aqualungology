@@ -84,6 +84,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'contact_form',
+    'tagging',
     'content',
     'south',
 )

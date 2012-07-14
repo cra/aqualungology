@@ -1,4 +1,4 @@
-from content.models import MediaEntry, Article
+from content.models import Film, Article, MediaEntry
 from django.contrib import admin
 
 def publish(modeladmin, request, queryset):
@@ -14,4 +14,5 @@ class ArticleAdmin(admin.ModelAdmin):
     actions = [publish, unpublish]
 
 admin.site.register(Article, ArticleAdmin)
+admin.site.register(Film)
 admin.site.register(MediaEntry)

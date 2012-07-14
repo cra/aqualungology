@@ -1,6 +1,8 @@
 # coding: utf-8
 
 from django.db import models
+from tagging.fields import TagField
+from tagging.models import Tag
 
 class Article(models.Model):
     slug = models.SlugField(max_length=200, unique_for_date='date_published')
@@ -9,10 +11,17 @@ class Article(models.Model):
     summary = models.TextField(blank=True)
     is_published = models.BooleanField(default=False)
     date_published = models.DateTimeField(blank=True, null=True, db_index=True)
+    tags = TagField()
     # TODO save rendered content in model to speed up loading
+
 
     def __unicode__(self):
         return self.slug
+
+
+    def get_tags(self):
+        return Tag.objects.get_for_object(self)
+
 
     def get_absolute_url(self):
         return ('blag-article-detail', (), { 'year': self.date_published.strftime('%Y'),
@@ -20,6 +29,7 @@ class Article(models.Model):
                                              'day': self.date_published.strftime('%d'),
                                              'slug': self.slug })
     get_absolute_url = models.permalink(get_absolute_url)
+
 
 
 class MediaEntry(models.Model):
@@ -37,6 +47,9 @@ class MediaEntry(models.Model):
         if emotions:
             self.emotions = emotions
 
+    def __unicode__(self):
+        return u"%s %s" % (self._meta.verbose_name.capitalize(), self.name)
+
 
 class Film(MediaEntry):
     FILM_GENRES = (
@@ -51,4 +64,14 @@ class Film(MediaEntry):
     length = models.CharField(u'Длительность в минутах', max_length=20)
     genre = models.CharField(u'Жанр', max_length=1, choices=FILM_GENRES, blank=True)
     company = models.CharField(u'Компания для просмотра', max_length=100, blank=True)
+    tags = TagField()
+
+
+    class Meta:
+        verbose_name = u"фильм"
+        verbose_name_plural = u"фильмы"
+
+
+    def get_tags(self):
+        return Tag.objects.get_for_object(self)
 
