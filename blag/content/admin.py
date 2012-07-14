@@ -10,9 +10,12 @@ def unpublish(modeladmin, request, queryset):
 unpublish.short_description = "Mark selected articles as draft"
 
 class ArticleAdmin(admin.ModelAdmin):
-    list_display = ('slug', 'title', 'date_published', 'is_published')
+    list_display = ('slug', 'title', 'tags', 'date_published', 'is_published')
     actions = [publish, unpublish]
 
+class FilmAdmin(admin.ModelAdmin):
+    list_display = ('__unicode__', 'tags')
+
 admin.site.register(Article, ArticleAdmin)
-admin.site.register(Film)
+admin.site.register(Film, FilmAdmin)
 admin.site.register(MediaEntry)

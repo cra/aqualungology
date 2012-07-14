@@ -19,6 +19,17 @@ caption, th, td { text-align: left; font-weight: normal; }
 blockquote, q { quotes: none; }
 :focus { outline: 0; }
 
+
+/* fancy */
+.box_rotate {
+    -moz-transform: rotate(-7.5deg);  /* FF3.5+ */
+    -o-transform: rotate(-7.5deg);  /* Opera 10.5 */
+    -webkit-transform: rotate(-7.5deg);  /* Saf3.1+, Chrome */
+    -writing-mode: tb-rl;
+}
+
+
+
 /* BASE */
 
 body {
@@ -87,6 +98,15 @@ a:hover {
     color: rgb(255, 255, 255);
 }
 
+#side-header {
+    font-size: 1.5em;
+    font-weight: bold;
+    letter-spacing: -0.05em;
+    color: rgb(255, 255, 255);
+    border-bottom: 4px solid;
+    border-right: 4px solid;
+}
+
 .section .related { 
     float: right;
     width: 164px;
@@ -128,7 +148,11 @@ a:hover {
 
 .posts-table td.date p,
 .posts-table td.summary p {
-    color: rgb(109, 116, 109);
+    color: white;
+    font-weight: bold;
+    font-size: 2.0em;
+    border-bottom: 4px solid;
+    border-right: 4px solid;
 }
 
 .posts-table td.summary {
@@ -150,6 +174,11 @@ a:hover {
     letter-spacing: -0.05em;
     padding-right: 16px;
     display: block;
+}
+
+.posts-table td.side {
+    padding-left:22px;
+    padding-right:22px;
 }
 
 

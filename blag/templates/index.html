@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load tagging_tags %}
 {% block title %}cramur.me{% endblock %}
 {% block content_title %}cramur.me{% endblock %}
 
@@ -17,22 +18,32 @@
 {#{% endblock header %}#}
 
 {% block extra_head_after_css %}
-  <link rel="stylesheet" type="text/css" href="/entries.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}entries.css">
 {% endblock extra_head_after_css %}
 
 {% block content %}
-
+{% tag_cloud_for_model content.Article as tags with steps=6 min_count=1 distribution=log %}
 <div id="content-main">
 <div id="articles" class="section">
-    <h1>Записи</h1>
-    <table class="posts-table">
+    <table> 
+        <td>
+            <table class="posts-table">
 {% for entry in articles %}
     <tr>
-        <td class="date"><p>{{ entry.date_published|date:"Y/m/d"|lower }}</p></td>
-        <td class="title"><a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a></td>
-        <td class="summary"><p>{{ entry.summary|safe }}</p></td>
+        <td class="date box_rotate"><p>{{ entry.date_published|date:"Y/m/d"|lower }}</p></td>
+        <td class="title">
+            <a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a><br/>
+            <p>{{ entry.summary|safe }}</p>
+        </td>
     </tr>
 {% endfor %}
+    </table>
+</td><td class="side box_rotate">
+<span id="side-header">Тэги&nbsp;</span><br/>
+</td><td class="side">
+    {% for tag in tags %}<span class="tag-{{ tag.font_size }}">{{ tag.name }}</span><br/>{%endfor %}
+</td>
+
     </table>
 </div><!--articles--></div><!--content-main-->
 {% endblock content %}
