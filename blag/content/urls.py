@@ -35,6 +35,7 @@ urlpatterns = (
         dict(articles_info,
             slug_field='slug',
             template_name='article_details.html',
+            extra_context={"COMMENTS_ENABLED": True},
             allow_future=True,),
         name='blag-article-detail'),
 )

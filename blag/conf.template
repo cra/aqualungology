@@ -2,6 +2,7 @@
 's|__DB_USER__|dbuser|'
 's|__DB_PASS__|dbpass|'
 's|__TRACKING_ACC__|BLABLABLA|'
+'s|__DISQUS_SHORTNAME__|cra-blag|'
 's|__MAILHOST__|example.com|'
 's|__MAILUSER__|example.user|'
 's|__MAILPORT__|100500|'
