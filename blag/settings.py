@@ -95,6 +95,8 @@ EMAIL_HOST_PASSWORD = conf.EMAIL_HOST_PASSWORD
 EMAIL_USE_TLS = conf.EMAIL_USE_TLS
 EMAIL_PORT = conf.EMAIL_PORT
 
+SEND_BROKEN_LINK_EMAILS = True
+
 #LOGGING = {
 #    'version': 1,
 #    'disable_existing_loggers': False,
