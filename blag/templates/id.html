@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{% for o in objects %}
+{% for o in object_list %}
 <p>Summary: {{ o.summary }}</p>
 <p>Content: <pre>{{ o.content }}</pre></p>
 <p>Is valid: {{ o.is_valid }}</p>
