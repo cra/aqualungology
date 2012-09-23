@@ -32,7 +32,7 @@ urlpatterns = (
         { 
             'queryset': ID.objects.filter(is_valid=True),
             'template_name': 'id.html'
-        }
+        },
         name='id'),
     url(r'^projects/$',
         'content.views.projects',
