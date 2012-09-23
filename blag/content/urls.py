@@ -2,7 +2,7 @@
 from django.conf.urls.defaults import patterns, include, url
 from django.views.generic import date_based
 
-from content.models import Article
+from content.models import Article, ID
 from content.feeds import LatestEntriesFeed
 
 import views
@@ -30,7 +30,7 @@ urlpatterns = (
     url(r'^id/$',
         'django.views.generic.list_detail.object_list', 
         { 
-            'queryset': ID.objects.filter(is_valid=True) 
+            'queryset': ID.objects.filter(is_valid=True),
             'template_name': 'id.html'
         }
         name='id'),
