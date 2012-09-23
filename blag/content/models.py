@@ -11,6 +11,9 @@ class ID(models.Model):
     content = models.TextField(blank=True)
     is_valid = models.BooleanField(default=False)
 
+    def __unicode__(self):
+        return self.summary
+
 
 class Article(models.Model):
     slug = models.SlugField(max_length=200, unique_for_date='date_published')
