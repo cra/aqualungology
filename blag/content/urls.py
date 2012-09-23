@@ -27,6 +27,13 @@ urlpatterns = (
     url(r'^about/$',
         'content.views.about',
         name='about'),
+    url(r'^id/$',
+        'django.views.generic.list_detail.object_list', 
+        { 
+            'queryset': ID.objects.filter(is_valid=True) 
+            'template_name': 'id.html'
+        }
+        name='id'),
     url(r'^projects/$',
         'content.views.projects',
         name='projects'),
