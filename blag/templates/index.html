@@ -16,7 +16,7 @@
             <table class="posts-table">
 {% for entry in articles %}
     <tr>
-        <td class="date box_rotate"><p>{{ entry.date_published|date:"Y/m/d"|lower }}</p></td>
+        <td class="date box_rotate"><p>{{ entry.date_published|date:"Y/m/d"|lower }}&nbsp;</p></td>
         <td class="title">
             <a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a><br/>
             <p>{{ entry.summary|safe }}</p>
