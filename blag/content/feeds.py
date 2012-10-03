@@ -1,5 +1,7 @@
 # coding: utf-8
 
+import datetime
+
 from django.contrib.syndication.views import Feed
 from django.utils.feedgenerator import Atom1Feed
 from django.utils.safestring import mark_safe
@@ -28,5 +30,5 @@ class LatestEntriesFeed(Feed):
         return mark_safe(item.content)
 
     def item_pubdate(self, item):
-        return item.date_published
+        return datetime.datetime.combine(item.date_published, datetime.time())
 
