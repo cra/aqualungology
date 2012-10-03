@@ -3,20 +3,6 @@
 {% block title %}cramur.me{% endblock %}
 {% block content_title %}cramur.me{% endblock %}
 
-{#{% block header %}#}
-{#<blockquote class="quotebig">#}
-  {#<dl>#}
-    {#<dt>There is a theory which states that if ever anybody discovers exactly#}
-    {#what the Universe is for and why it is here, it will instantly disappear#}
-    {#and be replaced by something even more bizarre and inexplicable. There is#}
-    {#another theory which states that this has already happened.</dt>#}
-    {#<dd class="author">#}
-    {#<b><a href="http://en.wikipedia.org/wiki/Douglas_Adams">Douglas Adams</a></b><br><i>English humorist & science fiction novelist  (1952#}
-      {#- 2001)</i></dd>#}
-  {#</dl>#}
-{#</blockquote>#}
-{#{% endblock header %}#}
-
 {% block extra_head_after_css %}
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}entries.css">
 {% endblock extra_head_after_css %}
@@ -38,12 +24,46 @@
     </tr>
 {% endfor %}
     </table>
-</td><td class="side box_rotate">
-<span id="side-header">Тэги&nbsp;</span><br/>
-</td><td class="side">
-    {% for tag in tags %}<span class="tag-{{ tag.font_size }}">{{ tag.name }}</span><br/>{%endfor %}
-</td>
+    </td>
+
+    <td>
+    <table class="side-table">
+    <tr>
+        <td class="side box_rotate">
+            <span id="side-header">&#958;ARr&nbsp;</span><br/>
+        </td>
+        <td class="side">
+    {% block navigation %}
+    <ul id="navigation">
+        {#<li><a href="/" class="logo">В начало</a></li>#}
+        {#<li id="#nav-blog"><a href="{% url articles %}">Блог</a></li>#}
+        <li id="#nav-blog">
+            <a class="nav" href="{% url index %}">Blag</a>
+            (<a href="{% url feed %}">Feed</a>)
+        </li>
+        <li id="#nav-about"><a class="nav" href="{% url about %}">About</a></li>
+        {#<li id="#nav-about"><a href="{% url contact_form %}">Contacts</a></li>#}
+        {#<li id="#nav-projects"><a href="{% url projects %}">Что я</a></li>#}
+        {% block additional_navigation %}
+        {% endblock additional_navigation %}
+    </ul>
+    <br/>
+    {% endblock navigation %}
+        </td></td>
+    </tr>
+    <tr>
+        <td class="side box_rotate">
+            <span id="side-header">Тэги&nbsp;</span><br/>
+        </td>
+        <td class="side">
+        {% for tag in tags %}<span class="tag-{{ tag.font_size }}">{{ tag.name }}</span><br/>{%endfor %}
+        </td></td>
+    </tr>
+    </table>
+    </td>
 
     </table>
+
 </div><!--articles--></div><!--content-main-->
+
 {% endblock content %}

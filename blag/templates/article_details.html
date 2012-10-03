@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}cramur.me -- {{object.title}}{% endblock title %}
+{% block title %}{{object.title}}{% endblock title %}
 
 {% block extra_head_after_css %}
 <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}entries.css">
@@ -17,15 +17,15 @@
 {% block content %}
 <div id="post" class="section">
 <div id="entry-header">
-    <span id="side-header" class="date box_rotate"><p>{{ object.date_published|date:"Y/m/d" }}&nbsp;</p></span>
     <h1>{{ object.title }}</h1>
+    <p>{{ object.date_published|date:"Y/m/d" }}&nbsp;</p>
 </div>
 <div id="entry-text">
-    {#<div class="inline flushleft pullquote summary first box_rotate">{{ object.summary|safe }}</div>#}
     {{ object.content|safe }}
 </div>
-{% if COMMENTS_ENABLED %}
-{% include "_disqus.html" %}
-{% endif %}
-        
+</div>
+<br/>
 {% endblock content %}
+{% block additional_footer %}
+<p>// Здесь были комментарии, но комментарии не нужны.</p>
+{% endblock additional_footer %}

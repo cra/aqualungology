@@ -3,125 +3,14 @@
 /* POST HEADER */
 
 #post #entry-header {
-    float: left;
-    width: 820px;
+    padding-bottom: 1em;
 }
 
-#post #entry-header .date {
-    float: left;
-    margin-top: 6.45em;
-    font-size: 0.75em;
-    color: rgb(109, 116, 109);
-}
-
-/* POST RELATED CONTENT */
-
-#post #post-related {
-    float: right;
-    width: 164px;
-    margin-top: 4.25em;
-}
-
-#post #post-related h2 {
-    margin-left: 0;
-    margin-top: 1.5em;
-    font-size: 1.3125em;
-}
-
-#post #post-related .post-list {
-    margin-bottom: 1em;
-}
-
-#post #post-related .post-list li {
-    list-style-type: none;
-    line-height: 1.125em;
-    margin-bottom: 0.5em;
-    *margin-bottom: 1em;
-}
-
-#post #post-related .post-list .summary {
-    font-size: 0.75em;
-    color: rgb(109, 116, 109);
+#post .date {
+    padding-top: 2em;
 }
 
 /* POST TEXT */
-
-#post #entry-text {
-    float: left;
-    clear: left;
-    width: 546px;
-    padding: 0 180px;
-}
-
-#post #entry-text p {
-    font-family: 'Times New Roman', serif;
-    font-size: 1.125;
-    line-height: 1.5em;
-    text-indent: 1em;
-}
-
-#post #entry-text p:first-child,
-#post #entry-text .summary+p,
-#post #entry-text h3+p,
-#post #entry-text p.first {
-    text-indent: 0;
-}
-
-#post #entry-text h3+p,
-#post #entry-text p.first {
-    margin-top: 1em;
-}
-
-#post #entry-text a,
-#post #entry-text strong,
-#post #entry-text h3 {
-    font-weight: bold;
-    font-family: Helvetica, Arial, sans-serif;
-    line-height: 1em;
-}
-
-#post #entry-text h3 {
-    margin-left: 0;
-    font-size: 1.125em;
-    margin-top: 1.5em;
-}
-
-#post #entry-text p.first strong:first-child,
-#post #entry-text .summary+p strong:first-child {
-    font-size: 1.125em;
-    line-height: 1.25em;
-}
-
-#post #entry-text ul,
-#post #entry-text ol {
-    margin: 1em 0;
-    font-size: 0.875em;
-    margin-left: 2.5em;
-    line-height: 1.5em;
-}
-
-#post #entry-text li {
-    margin: 0.5em 0;
-}
-
-#post #entry-text blockquote {
-    margin: 1em 0;
-    padding: 0.75em 1em;
-    font-size: 0.875em;
-}
-
-#post #entry-text blockquote p:first-child {
-    margin-top: 0;
-    text-indent: 0;
-}
-
-#post #entry-text blockquote:first-child,
-#post #entry-text blockquote.first,
-#post #entry-text .summary + blockquote {
-    margin-top: 0;
-    padding-top: 0;
-    padding-left: 0;
-}
 
 #post #entry-text .caps {
     font-size: 0.9em;
@@ -130,65 +19,6 @@
 #post #entry-text p code {
     font-size: 0.875em;
 }
-
-#post #entry-text p.note {
-    text-indent: 0;
-    margin: 1em 0;
-    padding: 0.75em 1em;
-    background-color: rgb(230, 235, 230);
-}
-
-/* INLINES */
-
-#post #entry-text .inline.left {
-    float: left;
-    margin: 1em 16px 1em 0;
-}
-
-#post #entry-text .inline.right {
-    float: right;
-    margin: 0.5em 0 1em 16px;
-}
-
-#post #entry-text .inline.flushleft {
-    float: left;
-    position: relative;
-    margin: 1em 1em 1em -180px;
-}
-
-#post #entry-text .inline.flushright {
-    float: right;
-    position: relative;
-    margin: 1em -180px 1em 1em;
-}
-
-#post #entry-text .inline.fullwidth {
-    margin-left: -180px;
-    width: 820px;
-    margin-bottom: 1em;
-}
-
-#post #entry-text .inline.textwidth {
-    width: 476px;
-    margin-bottom: 1em;
-    margin-top: 1em;
-}
-
-#post #entry-text .inline.first {
-    margin-top: 0;
-}
-
-/* PULLQUOTES */
-
-.pullquote {
-    font-size: 1.125em;
-    line-height: 1.25em;
-    font-weight: bold;
-    width: 178px;
-    white-space: normal;
-    color: rgb(109, 116, 109);
-}
-
 
 /* TAGS */
 

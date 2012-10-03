@@ -11,44 +11,32 @@
 {% endblock base_js %}
 {% block extra_head_after_js %}{% endblock %}
 {% block google_analytics %}{% include '_tracking.html' %}{% endblock google_analytics %}
+<!--[if !IE 7]>
+    <style type="text/css">
+        #wrap {display:table;height:100%}
+    </style>
+<![endif]-->
 </head>
-<body class="{{ body_class }}">
-    <div id="header">
-    {% block header %}
-    <ul id="navigation">
-        <!--<li><a href="/" class="logo">В начало</a></li>-->
-        {#<li id="#nav-blog"><a href="{% url articles %}">Блог</a></li>#}
-        <li id="#nav-blog"><a href="{% url index %}">Blag</a></li>
-        <li id="#nav-blog rotate-box"><a href="{% url feed %}">Feed</a></li>
-        <li id="#nav-about"><a href="{% url about %}">About</a></li>
-        {#<li id="#nav-about"><a href="{% url contact_form %}">Contacts</a></li>#}
-        {#<li id="#nav-projects"><a href="{% url projects %}">Что я</a></li>#}
-        {% block additional_navigation %}
-        {% endblock additional_navigation %}
-    </ul>
-    {% endblock header %}
+<body>
+    <div id="wrap">
+        <div id="header">
+        {% block header %}
+        {% endblock header %}
+        </div>
+        <div id="content">
+            {% block content %}
+            {% block main %}
+            <h1>Стартовая страница</h1>
+            {% endblock main %}
+            {% endblock content %}
+        </div>
     </div>
-    <div id="messages">
-    {% block message %}
-        {% if messages %}
-            {% for message in messages %}
-            <p class="{{ message.tags }}">{{ message }} {% now "d.m.Y H:i:s" %}</p>
-            {% endfor %}
-        {% endif %}
-    {% endblock message %}
+    <div id="footer">
+        {% block additional_footer %}
+        {% endblock additional_footer %}
+        {% block footer %}
+        <p>(c) WTFPL</p>
+        {% endblock footer %}
     </div>
-
-    <div id="content">
-        {% block content %}
-        {% block main %}
-        <h1>Стартовая страница</h1>
-        {% endblock main %}
-        {% endblock content %}
-    </div>
-    {#<div id="footer">#}
-        {#{% block footer %}#}
-        {#[><p><span class="quiet">Игорь Мосягин. Содержимое рекомендуется распространять по лицензии WTFPL.</span></p><]#}
-        {#{% endblock footer %}#}
-    {#</div>#}
 </body> 
 </html>
