@@ -4,6 +4,17 @@ from django.db import models
 from tagging.fields import TagField
 from tagging.models import Tag
 
+
+class ID(models.Model):
+    comment = models.TextField(blank=True)
+    summary = models.TextField(blank=True)
+    content = models.TextField(blank=True)
+    is_valid = models.BooleanField(default=False)
+
+    def __unicode__(self):
+        return self.summary
+
+
 class Article(models.Model):
     slug = models.SlugField(max_length=200, unique_for_date='date_published')
     title = models.CharField(u'титле', max_length=250)
