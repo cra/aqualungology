@@ -1,4 +1,4 @@
-# Django settings for blag project.
+# Django settings for cramurme project.
 import os
 import sys
 import conf
@@ -69,7 +69,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'blag.urls'
+ROOT_URLCONF = 'cramurme.urls'
 
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_DIR, 'templates'),
@@ -83,10 +83,10 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
-    'contact_form',
     'tagging',
     'content',
     'south',
+    'blag',
 )
 
 EMAIL_HOST = conf.EMAIL_HOST

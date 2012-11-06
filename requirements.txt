@@ -1,5 +1,6 @@
 Django==1.4
 South==0.7.3
 django-annoying==0.7.6
+-e git+https://bitbucket.org/cra/blag.git#egg=blag
 psycopg2==2.4.4
 wsgiref==0.1.2
