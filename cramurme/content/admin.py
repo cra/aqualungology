@@ -18,7 +18,7 @@ def validate(modeladmin, request, queryset):
 publish.short_description = "Make selected IDs valid"
 
 class ArticleAdmin(admin.ModelAdmin):
-    list_display = ('slug', 'title', 'tags', 'date_published', 'is_published')
+    list_display = ('slug', 'title', 'date_published', 'is_published')
     actions = [publish, unpublish]
 
 class FilmAdmin(admin.ModelAdmin):

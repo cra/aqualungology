@@ -20,14 +20,6 @@ blockquote, q { quotes: none; }
 :focus { outline: 0; }
 
 
-/* fancy */
-.box_rotate {
-    -moz-transform: rotate(-7.5deg);  /* FF3.5+ */
-    -o-transform: rotate(-7.5deg);  /* Opera 10.5 */
-    -webkit-transform: rotate(-7.5deg);  /* Saf3.1+, Chrome */
-    -writing-mode: tb-rl;
-}
-
 /* Footer, wrap, header */
 html, body {height: 100%; }
 #wrap {min-height: 100%;}
@@ -83,12 +75,6 @@ a.nav {
     overflow: hidden;
 }
 
-#side-header {
-    font-size: 1.5em;
-    letter-spacing: -0.05em;
-    color: rgb(255, 255, 255);
-}
-
 /* POSTS TABLE */
 
 .posts-table td {
@@ -96,7 +82,6 @@ a.nav {
     font-size: 0.75em;
     vertical-align: center;
     width: 148px;
-    /*background: url(../images/mask-black-25.png) 0 100% repeat-x;*/
 }
 
 .posts-table td.date p,

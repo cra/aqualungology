@@ -7,6 +7,8 @@ admin.autodiscover()
 
 urlpatterns = patterns(
     '',
+    url(r'^$', 'content.views.index', name='index'),
+
     url("", include("content.urls")),
     # url(r'^blag/', include('blag.foo.urls')),
 
