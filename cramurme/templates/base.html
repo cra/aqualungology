@@ -35,6 +35,18 @@
         {% block additional_footer %}
         {% endblock additional_footer %}
         {% block footer %}
+        {% block navigation %}
+            {#<li><a href="/" class="logo">В начало</a></li>#}
+            {#<li id="#nav-blog"><a href="{% url articles %}">Блог</a></li>#}
+            <a class="nav" href="{% url index %}">Blag</a>
+                (<a href="{% url feed %}">Feed</a>)
+            <a class="nav" href="{% url about %}">About</a>
+            {#<li id="#nav-about"><a href="{% url contact_form %}">Contacts</a></li>#}
+            {#<li id="#nav-projects"><a href="{% url projects %}">Что я</a></li>#}
+            {% block additional_navigation %}
+            {% endblock additional_navigation %}
+        <br/>
+        {% endblock navigation %}
         <p>(c) WTFPL</p>
         {% endblock footer %}
     </div>

@@ -9,8 +9,8 @@ from content.forms import AddFilmForm
 
 @render_to('index.html')
 def index(request):
-    article = [Article.objects.filter(is_published=True).order_by('-date_published')][-1]
-    return {'articles' : article,
+    article = Article.objects.filter(is_published=True).latest('date_published')
+    return {'article' : article,
             'body_class': 'blog'}
 
 
@@ -25,7 +25,7 @@ def upload(request, media_type):
 @render_to('article_details.html')
 def article_details(request, slug):
     article = get_object_or_404(Article, slug=slug)
-    return {'object': article}
+    return {'article': article}
 
 
 @render_to('articles.html')

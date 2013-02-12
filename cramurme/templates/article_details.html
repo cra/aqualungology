@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}{{object.title}}{% endblock title %}
+{% block title %}{{article.title}}{% endblock title %}
 
 {% block extra_head_after_css %}
 <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}entries.css">
@@ -10,21 +10,8 @@
 </script>
 {% endblock extra_head_after_css %}
 
-{% block additional_navigation %}
-    <li id="nav-blog"><a href="{% url index %}">&lt; В начало</a></li>
-{% endblock additional_navigation %}
-
 {% block content %}
-<div id="post" class="section">
-<div id="entry-header">
-    <h1>{{ object.title }}</h1>
-    <p>{{ object.date_published|date:"Y/m/d" }}&nbsp;</p>
-</div>
-<div id="entry-text">
-    {{ object.content|safe }}
-</div>
-</div>
-<br/>
+{% include "_article_display.html" %}
 {% endblock content %}
 {% block additional_footer %}
 <p>// Здесь были коментарии, но коментарии не нужны.</p>

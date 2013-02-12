@@ -1,7 +1,6 @@
 # coding: utf-8
 
 from django.db import models
-from django.db.models.signals import post_save
 from tagging.fields import TagField
 from tagging.models import Tag
 
@@ -32,7 +31,6 @@ class Article(models.Model):
         return ('blag-article-detail', (), {'slug': self.slug})
 
     get_absolute_url = models.permalink(get_absolute_url)
-
 
 
 class MediaEntry(models.Model):

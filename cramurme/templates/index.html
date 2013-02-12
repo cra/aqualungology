@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load tagging_tags %}
-{% block title %}cramur.me{% endblock %}
+{% block title %}cramur.me {{article.title}}{% endblock %}
 {% block content_title %}cramur.me{% endblock %}
 
 {% block extra_head_after_css %}
@@ -8,62 +8,10 @@
 {% endblock extra_head_after_css %}
 
 {% block content %}
-{% tag_cloud_for_model content.Article as tags with steps=6 min_count=1 distribution=log %}
+{% include "_article_display.html" %}
 <div id="content-main">
-<div id="articles" class="section">
-    <table> 
-        <td>
-            <table class="posts-table">
-{% for entry in articles %}
-    <tr>
-        <td class="date box_rotate"><p>{{ entry.date_published|date:"Y/m/d"|lower }}&nbsp;</p></td>
-        <td class="title">
-            <a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a><br/>
-            <p>{{ entry.summary|safe }}</p>
-        </td>
-    </tr>
-{% endfor %}
-    </table>
-    </td>
-
-    <td>
-    <table class="side-table">
-    <tr>
-        <td class="side box_rotate">
-            <span id="side-header">&#958;ARr&nbsp;</span><br/>
-        </td>
-        <td class="side">
-    {% block navigation %}
-    <ul id="navigation">
-        {#<li><a href="/" class="logo">В начало</a></li>#}
-        {#<li id="#nav-blog"><a href="{% url articles %}">Блог</a></li>#}
-        <li id="#nav-blog">
-            <a class="nav" href="{% url index %}">Blag</a>
-            (<a href="{% url feed %}">Feed</a>)
-        </li>
-        <li id="#nav-about"><a class="nav" href="{% url about %}">About</a></li>
-        {#<li id="#nav-about"><a href="{% url contact_form %}">Contacts</a></li>#}
-        {#<li id="#nav-projects"><a href="{% url projects %}">Что я</a></li>#}
-        {% block additional_navigation %}
-        {% endblock additional_navigation %}
-    </ul>
-    <br/>
-    {% endblock navigation %}
-        </td></td>
-    </tr>
-    <tr>
-        <td class="side box_rotate">
-            <span id="side-header">Тэги&nbsp;</span><br/>
-        </td>
-        <td class="side">
-        {% for tag in tags %}<span class="tag-{{ tag.font_size }}">{{ tag.name }}</span><br/>{%endfor %}
-        </td></td>
-    </tr>
-    </table>
-    </td>
-
-    </table>
-
-</div><!--articles--></div><!--content-main-->
+    <div id="articles" class="section">
+    </div><!--articles-->
+</div><!--content-main-->
 
 {% endblock content %}
