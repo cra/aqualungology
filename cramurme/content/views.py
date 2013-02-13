@@ -9,7 +9,7 @@ from content.models import Film, Article
 from content.forms import AddFilmForm
 
 def get_articles_by_year_dict():
-    all_articles = Article.objects.all()
+    all_articles = Article.objects.filter(is_published=True)
     years = [a.date_published.year for a in all_articles]
 
     articles = dict()
