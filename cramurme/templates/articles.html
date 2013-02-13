@@ -14,15 +14,7 @@
            {% endfor %}
        </ul>
        <br/>
-       {% for year, entry_list in articles.items reversed %}
-       <p class="prompt">archive/{{ year }}:</p>
-       <ul class="files-list">
-           {% for entry in entry_list reversed %}
-           <li>{{ entry.date_published|date:"Md"|lower }} &nbsp; <a href={{ entry.get_absolute_url }}>{{ entry.title }}</a></li>
-           {% endfor %}
-       </ul>
-       <br/>
-       {% endfor %}
+       {% include '_articles_chronolist.html' %}
     </div>
 </div>
 {% endblock content %}
