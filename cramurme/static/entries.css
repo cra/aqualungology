@@ -10,7 +10,35 @@
     padding-top: 2em;
 }
 
+p.prompt {
+    font-size: 1.5em;
+}
+
+span#username {
+    color: rgb(10, 5, 17);
+}
+span#date_published {
+    color: rgb(0, 120, 0);
+}
+
+/* archive */
+#dir-list li {
+    list-style: none;
+    display: inline;
+    color: lightcyan;
+    font-size: 1.5em;
+}
+
+li.files-list {
+    list-style: none;
+    font-size: 1.5em;
+}
+
 /* POST TEXT */
+
+#entry-text {
+    font-size: 2em;
+}
 
 #post #entry-text .caps {
     font-size: 0.9em;

@@ -1,10 +1,9 @@
 <div id="post" class="section">
-<div id="entry-header">
-    <h1><a href={{ article.get_absolute_url }}>{{ article.title }}</a></h1>
-    <p>{{ article.date_published|date:"Y/m/d" }}&nbsp;</p>
+    <div id="entry-header">
+    <p class="prompt">[<span id="username">cramur</span> <span id="date_published">{{ article.date_published|date:"Y/m/d"}}</span> ~/blag]<br/>
+       &nbsp;$&nbsp;cat <a href={{ article.get_absolute_url }}>{{ article.title }}</a></p>
+    </div>
+    <div id="entry-text">
+        {{ article.content|safe }}
+    </div>
 </div>
-<div id="entry-text">
-    {{ article.content|safe }}
-</div>
-</div>
-<br/>

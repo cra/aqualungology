@@ -32,23 +32,22 @@
         </div>
     </div>
     <div id="footer">
-        {% block additional_footer %}
-        {% endblock additional_footer %}
-        {% block footer %}
+    {% block footer %}
         {% block navigation %}
-            {#<li><a href="/" class="logo">В начало</a></li>#}
-            {#<li id="#nav-blog"><a href="{% url articles %}">Блог</a></li>#}
-            <a class="nav" href="{% url index %}">Blag</a>
-                (<a href="{% url feed %}">Feed</a>)
-            <a class="nav" href="{% url about %}">About</a>
-            {#<li id="#nav-about"><a href="{% url contact_form %}">Contacts</a></li>#}
-            {#<li id="#nav-projects"><a href="{% url projects %}">Что я</a></li>#}
-            {% block additional_navigation %}
-            {% endblock additional_navigation %}
-        <br/>
+        {#<li><a href="/" class="logo">В начало</a></li>#}
+        {#<li id="#nav-blog"><a href="{% url articles %}">Блог</a></li>#}
+        <ul id="nav-list">
+            <li><a class="nav-logolike" href={% url index %}>cramur.me</a>:</li>
+            <li><a class="nav" href={% url about %}>About</a></li>
+            <li><a class="nav" href={% url articles %}>Moar</a>
+                <a class="nav-small" href={% url feed %}>Feed</a>
+                </li>
+        </ul>
+        {#<li id="#nav-about"><a href="{% url contact_form %}">Contacts</a></li>#}
+        {#<li id="#nav-projects"><a href="{% url projects %}">Что я</a></li>#}
         {% endblock navigation %}
-        <p>(c) WTFPL</p>
-        {% endblock footer %}
+    <p>(c) WTFPL {% block additional_footer %}{% endblock additional_footer %}</p>
+    {% endblock footer %}
     </div>
 </body> 
 </html>

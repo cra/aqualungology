@@ -1,5 +1,7 @@
 # coding: utf-8
 
+from datetime import datetime
+
 from annoying.decorators import render_to
 from django.shortcuts import redirect, get_object_or_404
 
@@ -10,8 +12,9 @@ from content.forms import AddFilmForm
 @render_to('index.html')
 def index(request):
     article = Article.objects.filter(is_published=True).latest('date_published')
+    all_articles = Article.objects.all()
     return {'article' : article,
-            'body_class': 'blog'}
+            'all_articles': all_articles,}
 
 
 @render_to('upload.html')
@@ -30,7 +33,17 @@ def article_details(request, slug):
 
 @render_to('articles.html')
 def articles(request):
-    return {'articles': Article.objects.all(), 'body_class': 'blog'}
+    ctx = dict()
+
+    all_articles = Article.objects.all()
+    #years = sorted([a.date_published.year for a in all_articles])
+    years = [a.date_published.year for a in all_articles]
+
+    ctx['articles'] = dict()
+    for year in set(years):
+        ctx['articles'][year] = all_articles.filter(date_published__year=year).order_by('date_published')
+
+    return ctx
 
 
 @render_to('about.html')
