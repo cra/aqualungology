@@ -24,7 +24,7 @@ class LatestEntriesFeed(Feed):
         return Article.objects.filter(is_published=True).order_by('-date_published')[:7]
 
     def item_title(self, item):
-        return item.title + u" -- %s " % item.summary
+        return item.title
 
     def item_description(self, item):
         return mark_safe(item.content)
