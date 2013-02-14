@@ -21,7 +21,7 @@ class LatestEntriesFeed(Feed):
     #description_template = "feeds/latest_description.html"
 
     def items(self):
-        return Article.objects.filter(is_published=True).order_by('-date_published')[:7]
+        return Article.objects.filter(is_published=True).order_by('-date_published')
 
     def item_title(self, item):
         return item.title
