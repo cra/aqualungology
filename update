@@ -1,7 +1,5 @@
 #!/bin/bash
 
 git pull
-~/env/blag/manage.py collectstatic --noinput
-cd
-~/uwsgi.sh restart
-cd -
+python ~/env/cramurme/manage.py collectstatic --noinput
+uwsgi cramur.me reload
