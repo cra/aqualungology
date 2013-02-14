@@ -30,6 +30,7 @@ urlpatterns = (
     url(r'^projects/$',
         'content.views.projects',
         name='projects'),
+
     url(r'^(?P<slug>[-\w]+)/$',
         'content.views.article_details',
         name='blag-article-detail'),
