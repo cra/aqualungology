@@ -11,3 +11,8 @@ class AddFilmForm(forms.ModelForm):
                 'reason', 'genre',
                 'company', 'length')
 
+
+class AddMediaEntryForm(forms.Form):
+    full_name = forms.CharField(label=u"Stuff", required=True,)
+    comment = forms.CharField(u'comment',)
+    time = forms.CharField(label=u"Время")

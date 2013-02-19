@@ -4,9 +4,10 @@ from datetime import datetime
 
 from annoying.decorators import render_to
 from django.shortcuts import redirect, get_object_or_404
+from django.forms.formsets import formset_factory
 
 from content.models import Film, Article
-from content.forms import AddFilmForm
+from content.forms import AddFilmForm, AddMediaEntryForm
 
 def get_articles_by_year_dict():
     all_articles = Article.objects.filter(is_published=True)
@@ -58,3 +59,32 @@ def contacts(request):
 @render_to('contact.html')
 def projects(request):
     return {'body_class': 'contacts'}
+
+
+@render_to('testjs.html')
+def testjs(request):
+    AddMediaEntryFormSet = formset_factory(AddMediaEntryForm, extra=2, can_delete=True)
+    import json
+    import re
+    film = Film.objects.get(pk=1)
+    test_json = film.name
+
+    if request.method == "POST":
+        addmedia_formset = AddMediaEntryFormSet(request.POST, prefix='mediaentry')
+        if addmedia_formset.is_valid():
+
+            store_val =  filter(
+                lambda x: 'DELETE' in x and x['DELETE'] == False, 
+                addmedia_formset.cleaned_data
+            )
+
+            film.name = json.dumps(store_val, ensure_ascii=False)
+            film.save()
+            return redirect('testjs')
+
+    else:
+        addmedia_formset = AddMediaEntryFormSet(
+                prefix="mediaentry", 
+                initial=json.loads(test_json))
+
+    return {"media_formset": addmedia_formset}

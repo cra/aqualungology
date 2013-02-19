@@ -10,6 +10,8 @@ urlpatterns = patterns(
     '',
     url(r'^$', 'content.views.index', name='index'),
 
+    url(r'^test-js/$', 'content.views.testjs', name='testjs'),
+
     url(r'^stats/$', direct_to_template, {'template': 'stats.txt'}),
 
     url(r'^admin/', include(admin.site.urls)),
