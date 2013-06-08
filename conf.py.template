@@ -1,0 +1,24 @@
+# coding: utf-8
+SERVER_EMAIL = 'garik@goatse.cx'
+
+# copy me to conf.py to make site actually work
+
+ADMINS = (
+    (u'Igor Mosyagin', 'g-ss@ya.ru'),
+)
+
+TIME_ZONE = 'Europe/Moscow'
+LANGUAGE_CODE = 'ru-RU'
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'aqualungology',
+        'USER': 'aqualungology',
+        'PASSWORD': 'SOME PASS ON',
+        'HOST': '',
+        'PORT': '',
+    }
+}
+
+SECRET_KEY = 'random string of 50 symbols'
+
